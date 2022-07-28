@@ -3,6 +3,8 @@ import time
 import tkinter.messagebox
 import tkinter as tk
 import datetime
+if sys.platform == "win32":
+    import winsound
 
 BATTERY_START_CHARGING_PERCENTAGE = 25.0
 BATTERY_STOP_CHARGING_PERCENTAGE = 90.0
@@ -71,6 +73,8 @@ class MsgBoxBatteryEvent(object):
         closes the message box, or when the battery charging state changes (i.e from charging
         to discharging or vice versa)
         """
+        if sys.platform == "win32":
+            winsound.MessageBeep()
         self.__battery_charging_state_init = get_battery_charging_state()
         self.__close_msg_box_state_change_fnc()
         tkinter.messagebox.showinfo(*args, **kwargs, master=self.__root, parent=self.__top)
