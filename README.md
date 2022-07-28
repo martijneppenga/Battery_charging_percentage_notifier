@@ -27,3 +27,9 @@ python pyinstaller --onefile Battery_percentage.py
 Open a text file and added the following line:<br>
 python "path\to\directory\file\Battery_percentage.py"<br>
 And change the extension from .txt to .bat
+
+## Battery state functions
+Two function are provided within the Battery_percentage.py file which be used to get the battery percentage or the battery charging state:<br>
+- get_battery_percentage
+- get_battery_charging_state
+
